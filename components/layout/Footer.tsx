@@ -34,7 +34,7 @@ export default function Footer() {
           </p>
 
           <div className="flex flex-row items-center gap-3 md:gap-5 lg:gap-7 md:order-2 order-1">
-            <div className="flex flex-row items-center gap-3 md:gap-5 lg:gap-7">
+            {/* <div className="flex flex-row items-center gap-3 md:gap-5 lg:gap-7">
               {socials.map((social) => (
                 <HoverLink
                   key={social.href}
@@ -45,7 +45,7 @@ export default function Footer() {
                   {social.label}
                 </HoverLink>
               ))}
-            </div>
+            </div> */}
 
             <div className="relative group inline-block">
               <button

@@ -7,9 +7,8 @@ import {
   useTransform,
   AnimatePresence,
 } from "framer-motion";
-import Overlay from "@/components/icons/Overlay";
 import MaskRevealUp from "@/components/ui/MaskRevealUp";
-import TextReveal from "@/components/ui/TextReveal";
+import Image from "next/image";
 
 const SLIDES = [
   [
@@ -27,6 +26,12 @@ const SLIDES = [
     "tailored to your soil, crop, and",
     "season.",
   ],
+];
+
+const IMAGES = [
+  "/assets/hero-1.jpeg",
+  "/assets/hero-2.jpeg",
+  "/assets/hero-3.jpeg",
 ];
 
 const SLIDE_DURATION = 5000;
@@ -54,17 +59,28 @@ export default function Hero() {
     <section
       ref={containerRef}
       className="relative flex min-h-screen w-full items-end overflow-hidden">
-      <motion.video
-        autoPlay
-        muted
-        loop
-        playsInline
-        poster="/assets/fallback-hero.jpg"
-        className="absolute inset-0 -z-20 h-full w-full object-cover"
-        style={{ scale: videoScale }}
-        transition={{ ease: [0.25, 0.1, 0.25, 1] }}>
-        <source src="/assets/extension_agent.mp4" type="video/mp4" />
-      </motion.video>
+      <motion.div
+        className="absolute inset-0 -z-20 h-full w-full"
+        style={{ scale: videoScale }}>
+        <AnimatePresence initial={false}>
+          <motion.div
+            key={activeIndex}
+            className="absolute inset-0"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}>
+            <Image
+              src={IMAGES[activeIndex]}
+              alt=""
+              fill
+              priority={activeIndex === 0}
+              sizes="100vw"
+              className="object-cover"
+            />
+          </motion.div>
+        </AnimatePresence>
+      </motion.div>
 
       <div className="absolute inset-0 -z-10 bg-linear-to-t from-black/70 via-black/20 to-black/40" />
 

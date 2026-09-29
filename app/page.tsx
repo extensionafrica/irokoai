@@ -17,7 +17,7 @@ export default function Home() {
       <EveryFarmer />
       <HowItWork />
       <BuiltOnce />
-      <BuiltWith />
+      {/* <BuiltWith /> */}
     </div>
   );
 }
