@@ -60,17 +60,20 @@ export default function NavBar() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className="flex h-full w-full flex-col overflow-hidden justify-center">
         <div className="flex shrink-0 items-center container-page justify-between px-4 w-full">
-          <Link
-            href="/"
-            className="relative z-10 block h-14 w-56 sm:h-16 sm:w-64">
-            <Image
-              src="/assets/IROKO.webp"
-              alt="irokoai logo"
-              fill
-              sizes="(max-width: 640px) 224px, 256px"
-              priority
-              className="object-contain object-left"
-            />
+          <Link href="/" className="relative z-10 flex items-center gap-2">
+            <span className="relative block h-10 w-10 shrink-0 sm:h-12 sm:w-12">
+              <Image
+                src="/assets/irokoai5.png"
+                alt="irokoai logo"
+                fill
+                sizes="52px"
+                priority
+                className="object-contain"
+              />
+            </span>
+            <span className="text-xl font-semibold text-white sm:text-2xl">
+              irokoAI.ng
+            </span>
           </Link>
 
           <div className="flex items-center gap-4">

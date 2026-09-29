@@ -34,7 +34,7 @@ const IMAGES = [
   "/assets/hero-3.jpeg",
 ];
 
-const SLIDE_DURATION = 5000;
+const SLIDE_DURATION = 9000;
 
 export default function Hero() {
   const [activeIndex, setActiveIndex] = useState(0);
